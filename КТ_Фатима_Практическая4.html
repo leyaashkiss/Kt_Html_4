@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Машина</title>
+<style>
+body {
+    margin: 0;
+    background-color: #87ceeb;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.car {
+    width: 200px;
+    height: 45px;
+    background-color: red;
+    position: absolute;
+    bottom: 55px;
+    left: -200px;
+    animation: move 4s forwards;
+}
+/* кабина */
+.car::before {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 38px;
+    background-color: lightblue;
+    border: 5px solid red;
+    left: 30px;
+    top: -43px;
+}
+/* колеса */
+.car::after {
+    content: "";
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 25px;
+    left: 18px;
+    box-shadow: 120px 0px black;
+}
+
+@keyframes move {
+    0% { left: -200px; }
+    100% { left: calc(100% - 250px); }
+}
+
+.road {
+    background-color: #555;
+    height: 90px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.sun {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    right: 60px;
+}
+
+.house {
+    width: 130px;
+    height: 100px;
+    background-color: #c98a4b;
+    position: absolute;
+    bottom: 90px;
+    left: 150px;
+}
+/* крыша */
+.house::before {
+    content: "";
+    position: absolute;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-bottom: 55px solid brown;
+    top: -55px;
+    left: -10px;
+}
+.house::after {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    top: 30px;
+    left: 20px;
+}
+
+.tree {
+    width: 25px;
+    height: 80px;
+    background-color: brown;
+    position: absolute;
+    bottom: 90px;
+    right: 350px;
+}
+.tree::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: green;
+    top: -80px;
+    left: -38px;
+}
+</style>
+</head>
+<body>
+
+<div class="sun"></div>
+<div class="house"></div>
+<div class="tree"></div>
+<div class="road"></div>
+
+<div class="car"></div>
+
+</body>
+</html>
